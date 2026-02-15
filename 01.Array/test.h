@@ -1,0 +1,2 @@
+void testStaticArray();
+void testDynamicArray();
