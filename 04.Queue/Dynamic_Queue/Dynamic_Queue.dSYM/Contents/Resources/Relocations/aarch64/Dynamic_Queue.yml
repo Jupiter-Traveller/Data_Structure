@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/jupitertraveller/Projects/c_code/multiple/data_structure/04.Queue/Dynamic_Queue/Dynamic_Queue'
+relocations:     []
+...
