@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "linked_list.h"
 
+//!!!
+//This library implement singly linked list operations
+//!!!
+
 //creater a new node with specific data
 Node *createNode (int data)
 {
@@ -71,6 +75,7 @@ Node *insertAtEnd2 (Node *head, int data)
 void insertAtPosition1 (Node **head, int data, int position) {
     if (position==0) {
         insertAtHead1 (head, data);
+        return ;
     }
     Node *current=*head;
     for (int i=0; i<position-1; i++) {
@@ -84,7 +89,7 @@ void insertAtPosition1 (Node **head, int data, int position) {
         printf ("%d location exceed the length of linked list!\n", position);
         return ;
     }
-    Node *new_node=(Node *) malloc (sizeof(Node));
+    Node *new_node=createNode (data);
     new_node->next=current->next;
     current->next=new_node;
 }
@@ -109,7 +114,7 @@ Node *insertAtPosition2 (Node *head, int data, int position)
         printf ("%d location exceed the length of linked list!\n", position);
         return head;
     }
-    Node *new_node=(Node *) malloc (sizeof(Node));
+    Node *new_node=createNode (data);
     new_node->next=current->next;
     current->next=new_node;
     return head;
@@ -165,7 +170,7 @@ Node *deletValue2 (Node *head, int value)
         return head;
     }
     Node *temp=current->next;
-    current=temp->next;
+    current->next=temp->next;
     free (temp);
     return head;
 }
@@ -207,7 +212,7 @@ void printList (Node *head)
         printf ("[%d]->", head->data);
         head=head->next;
     }
-    printf ("NULL");
+    printf ("NULL\n");
 }
 
 //free all the memory which held the linked list
@@ -219,6 +224,7 @@ void freeList (Node **head)
         current=temp->next;
         free (temp);
     }
+    *head=NULL; //avoid Dangling Pointer
 }
 
 //reverse a linked list

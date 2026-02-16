@@ -1,7 +1,9 @@
 #include "array.h"
 #include <stdio.h>
 #include <stdlib.h>
-//!!!Static Array Operations!!!
+//!!!
+//Static Array Operations
+//!!!
 
 //print all the elemtns and information about the array
 void printArray (int arr[], int n)
@@ -119,7 +121,9 @@ int findMin (int arr[], int n)
 
 
 
-// !!!Dynamic Array Operations!!!
+//!!!
+//Dynamic Array Operations
+//!!!
 
 //Define a Dynamic Arryay
 
