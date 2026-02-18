@@ -1,7 +1,10 @@
-#define MAX_SIZE 100
+#ifndef STATIC_STACK_H
+#define STATIC_STACK_H
+
+//#define MAX_SIZE 100
 
 typedef struct {
-    int data[MAX_SIZE];
+    int data[100];
     int top;
 } ArrayStack;
 
@@ -17,3 +20,5 @@ void printStack (ArrayStack *s);
 
 int isBalanced(char *str);
 void convert (int n);
+
+#endif

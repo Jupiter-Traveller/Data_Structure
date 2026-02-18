@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "static_stack.h"
 
+//!!!
+//This library implement static stack using static array
+//!!!
+
 //initialize stack
 void initStack (ArrayStack *s)
 {
@@ -11,7 +15,7 @@ void initStack (ArrayStack *s)
 //judge whether a stack is full
 int isFull (ArrayStack *s)
 {
-    return s->top == MAX_SIZE - 1;
+    return s->top == 100 - 1;
 }
 
 //judge whether a stack is empty
@@ -77,6 +81,7 @@ int peek2 (ArrayStack *s, int *value)
     return 1;
 }
 
+//print all the elements in the stack from top to bottom
 void printStack (ArrayStack *s)
 {
     if (isEmpty (s)) {
@@ -90,7 +95,7 @@ void printStack (ArrayStack *s)
     printf ("<- bottom\n");
 }
 
-
+//The following two functions are exercise
 int isBalanced(char *str)
 {
     // ( == 1

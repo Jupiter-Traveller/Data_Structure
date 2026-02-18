@@ -4,6 +4,7 @@
 #include "static_stack.h"
 #include "dynamic_stack.h"
 #include "test.h"
+#include "double_stack.h"
 
 void test_static ()
 {
@@ -64,4 +65,31 @@ void test_convert ()
     printf ("Please Enter a number convert to binary: ");
     scanf ("%d", &n);
     convert (n);
+}
+
+void test_myQueue ()
+{
+    printf("--- 开始测试用两个栈实现队列 ---\n");
+    
+    MyQueue* q = myQueueCreate();
+    
+    myQueueEnqueue(q, 1); // 队列: [1]
+    myQueueEnqueue(q, 2); // 队列: [1, 2]
+    myQueueEnqueue(q, 3); // 队列: [1, 2, 3]
+    
+    printMyQueue (q); //应该为 [1, 2, 3]
+    
+    printf("出队元素 (应为1): %d\n", myQueueDequeue(q)); // 队列: [2, 3]
+    printMyQueue (q); //应该为 [2, 3]
+
+    myQueueEnqueue(q, 4); // 队列: [2, 3, 4]
+    
+    printf("出队元素 (应为2): %d\n", myQueueDequeue(q));
+    printf("出队元素 (应为3): %d\n", myQueueDequeue(q));
+
+    printMyQueue (q); //应该为 [4]
+    printf("出队元素 (应为4): %d\n", myQueueDequeue(q)); // 队列: []
+    
+    printMyQueue (q);//无元素
+    freeMyQueue (q);
 }
